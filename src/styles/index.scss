@@ -1,18 +1,31 @@
 :root {
   font-family: "Roboto", sans-serif;
+  --frost-color: #f3f3f4;
+  --black-color: black;
 }
+
 body {
   height: calc(100vh - 2rem);
   margin: 1rem 2rem;
 }
-.black-button {
+
+// Buttons
+.button {
   padding: 0.75rem 1rem;
-  background-color: black;
-  color: white;
   cursor: pointer;
   width: fit-content;
   border-radius: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.black_button {
+  @extend .button;
+  background-color: var(--black-color);
+  color: white;
+}
+.frost_button {
+  @extend .button;
+  background-color: var(--frost-color);
+  color: black;
 }

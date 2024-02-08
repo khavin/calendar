@@ -1,11 +1,10 @@
-import Menu from "../Menu";
+import ScheduleToggle from "../ScheduleToggle";
 import styles from "./index.module.scss";
 
-export default function MainPanel() {
+export default function Menu() {
   return (
     <div className={styles.container}>
-      <Menu />
-      <div></div>
+      <ScheduleToggle />
     </div>
   );
 }

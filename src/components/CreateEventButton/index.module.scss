@@ -1,8 +1,8 @@
 @media only screen and (max-width: 650px) {
-  .create-event-text {
+  .create_event_text {
     display: none;
   }
-  .black-button.create-event-button {
+  .create_event_button.black_button {
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
@@ -10,5 +10,6 @@
     position: fixed;
     bottom: 2%;
     right: 5%;
+    font-size: 1.5rem;
   }
 }

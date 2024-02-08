@@ -1,8 +1,8 @@
 import CreateEventButton from "../CreateEventButton";
-import "./index.scss";
+import styles from "./index.module.scss";
 export default function SidePanel() {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <CreateEventButton />
     </div>
   );
