@@ -1,11 +1,40 @@
+import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 
 export default function ScheduleToggle() {
-  return (
-    <div className={styles.container}>
-      <span className={`${styles.selected} ${styles.toggle}`}>Day</span>
-      <span className={styles.toggle}>Week</span>
-      <span className={styles.toggle}>Month</span>
-    </div>
-  );
+  let schedules = ["Day", "Week", "Month"];
+  let [selectedSchd, setSelectedSchd] = useState("Day");
+  let [scheduleElements, setScheduleElements] = useState([]);
+
+  // handle toggle select action
+  const selectToggle = (index) => {
+    setSelectedSchd(schedules[index]);
+  };
+
+  useEffect(() => {
+    // Create schedule elements array
+    let elements = [];
+    schedules.forEach((value, index) => {
+      // CSS classes to add for the toggle
+      let classes = styles.toggle;
+      // Decide if the selected CSS class should be added
+      if (value === selectedSchd) classes += " " + styles.selected;
+
+      elements.push(
+        <span
+          className={classes}
+          onClick={() => {
+            selectToggle(index);
+          }}
+          key={value}
+        >
+          {value}
+        </span>
+      );
+
+      setScheduleElements(elements);
+    });
+  }, [selectedSchd]);
+
+  return <div className={styles.container}>{scheduleElements}</div>;
 }
