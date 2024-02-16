@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 
 export default function ScheduleToggle() {
   let schedules = ["Day", "Week", "Month"];
+  // Default schedule - "Day"
   let [selectedSchd, setSelectedSchd] = useState("Day");
   let [scheduleElements, setScheduleElements] = useState([]);
 
@@ -11,8 +12,8 @@ export default function ScheduleToggle() {
     setSelectedSchd(schedules[index]);
   };
 
+  // Create schedule elements array
   useEffect(() => {
-    // Create schedule elements array
     let elements = [];
     schedules.forEach((value, index) => {
       // CSS classes to add for the toggle
@@ -20,6 +21,7 @@ export default function ScheduleToggle() {
       // Decide if the selected CSS class should be added
       if (value === selectedSchd) classes += " " + styles.selected;
 
+      // Add HTML elements
       elements.push(
         <span
           className={classes}
