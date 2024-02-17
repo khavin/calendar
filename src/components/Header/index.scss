@@ -2,6 +2,13 @@
   display: flex;
   justify-content: space-between;
 }
+.app-and-menu-container {
+  display: flex;
+  align-items: center;
+}
+.app-and-menu-container img {
+  width: 2rem;
+}
 .app-name {
   font-size: 2rem;
 }
